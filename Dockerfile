@@ -8,6 +8,8 @@ FROM ttbb/influxdb1:nake
 
 COPY docker-build /opt/sh/influxdb/mate
 
+COPY config/influxdb.conf /opt/sh/influxdb/etc/influxdb/influxdb.conf
+
 COPY --from=build /opt/sh/compile/target/debug/influxdb1-mate-rust /opt/sh/influxdb/mate/influxdb1-mate
 
 WORKDIR /opt/sh/influxdb
